@@ -3,6 +3,10 @@ class PostImage < ApplicationRecord
  belongs_to :user
  has_many :post_comments, dependent: :destroy
  has_many :favorites, dependent: :destroy
+ 
+ validates :shop_name,presence: true
+ validates :image,presence: true
+ 
  has_one_attached :image
 
  def get_image(width, height)
